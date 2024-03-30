@@ -10,8 +10,8 @@
             <hr class="text-success" />
         </div>
         @include('errors.list')
-        <div class="row justify-content-center">
-            <div class="col-md-8">
+        <div class="row justify-content-center mt-4">
+            <div class="col-md-12">
                 <form method="POST" action="{{ route('editProfile') }}">
                         @csrf
                         <div class="row mb-3">

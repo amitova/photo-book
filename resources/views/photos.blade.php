@@ -13,6 +13,7 @@
             @include('errors.list')
             <!-- Gallery https://mdbootstrap.com/docs/standard/extended/gallery/ -->
             <div class="row mt-4">
+                @if($photos->count() >=2)
                     @foreach($photos->split($photos->count()/2) as $row)
                         <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
                             @foreach($row as $photo)
@@ -26,6 +27,17 @@
                             @endforeach
                         </div> 
                     @endforeach
+                @else
+                    @foreach($photos as $photo)
+                        <a href="{{ route('reviewPhoto', [$photo->id])}}">
+                            <img
+                            src="{{ asset('uploads/media/'.$photo->file_name) }}"
+                            class="w-100 shadow-1-strong rounded mb-4"
+                            alt="Boat on Calm Water"
+                            />
+                        </a>
+                    @endforeach
+                @endif
             </div>  
             <!-- Gallery -->
         </div>

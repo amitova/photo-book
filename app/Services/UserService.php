@@ -8,8 +8,10 @@ class UserService
 {
     public function getAllUsers(){
         $page=10;
-        $userRole = Auth::user()->role;
-        return User::getAllUsers($page, $userRole);    
+        if(Auth::user()){
+            $userRole = Auth::user()->role;     
+        }
+        return User::getAllUsers($page, $userRole='user');    
     } 
 
     public function getUserData(){

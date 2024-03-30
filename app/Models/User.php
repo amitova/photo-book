@@ -49,7 +49,6 @@ class User extends Authenticatable
         $queryAllUsers = User::select( 'name', 'email', 'users.created_at', 'users.id as userId', \DB::raw('count(p.id) as countPhotos'))
                 ->leftJoin('photos as p', 'p.created_by', '=','users.id')
                 ->where('users.del', 0)
-                ->where('p.del', 0)
                 ->groupBy('name', 'email','users.created_at', 'users.id');
         if($userRole =='user'){ 
             $queryAllUsers->orderBy('countPhotos', 'DESC');

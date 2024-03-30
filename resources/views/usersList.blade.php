@@ -20,9 +20,11 @@
                                 <th>Email</th>
                                 <th>Files</th>
                                 <th>Registration</th>
-                                @if(Auth::user()->role=='admin')
-                                    <th class="text-center">Action</th>
-                                @endif
+                                @auth
+                                    @if(Auth::user()->role=='admin')
+                                        <th class="text-center">Action</th>
+                                    @endif
+                                @endauth
                             </tr>
                         </thead>
                         <tbody>
@@ -32,12 +34,14 @@
                                     <td>{{ $user->email }}</td>
                                     <td>{{ $user->countPhotos }}</td>
                                     <td>{{ $user->created_at}}</td>
-                                    @if(Auth::user()->role=='admin')
-                                        <td class="text-center">
-                                            <i class="fa fa-trash fs-5 text-danger"></i>
-                                            <a class="fa-solid fa-image ms-2 fs-5 text-success" href="{{ route('userPhotos', [$user->userId] )}}"></a>
-                                        </td>
-                                    @endif
+                                    @auth
+                                        @if(Auth::user()->role=='admin')
+                                            <td class="text-center">
+                                                <i class="fa fa-trash fs-5 text-danger"></i>
+                                                <a class="fa-solid fa-image ms-2 fs-5 text-success" href="{{ route('userPhotos', [$user->userId] )}}"></a>
+                                            </td>
+                                        @endif
+                                    @endauth
                                 </tr>
                         @endforeach
                         </tbody>

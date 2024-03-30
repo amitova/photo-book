@@ -59,12 +59,12 @@
                                 <i class="fa fa-comment fw-bold fs-4 p-4 text-success"> Comments</i>
                             </div>
                         </div>
-                        <div class="row pb-2 border-bottom border-success">
+                        <div class="row pb-2">
                             @foreach($comments as $comment)
-                                <div class="col-8">
+                                <div class="col-8  border-bottom border-success">
                                     <p class="mt-4 ">{{ $comment->comment }}</p>
                                 </div>
-                                <div class="col-4 justify-content-end text-end pt-4">
+                                <div class="col-4 justify-content-end text-end pt-4  border-bottom border-success">
                                     <form action="{{ route('deleteComment', [$comment->id]) }}" method="post" enctype="multipart/form-data">
                                         @csrf
                                         <button type="submit" >
