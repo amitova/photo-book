@@ -1,66 +1,61 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+Laravel:^11.0 / Vite
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Login/ Register 
+-  laravel/ui
+-  ui bootstrap --auth
 
-## About Laravel
+Email
+Тестовите съобщения са налични в лог файла
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Admin
+Т.к няма изискване за подхода при регистрация на този роля,
+трябва да има предварително регистриран потребител с такава (run db::seed)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Задание
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Задача: Сайт за снимки
 
-## Learning Laravel
+ I. Потребителска част:
++     1. Начало (индекс страница)
++         а) меню за различните основни секции на  сайта (Начало|Снимки|Потребители|Контакти)
++         б) последните 10 снимки листнати като линкове
++         в) форма за регистрация на нови потребители
++         г) логин форма за потребители
++     2. Снимки
++         а) меню за различните основни секции на  сайта (Начало|Снимки|Потребители|Контакти)
++         б) листване на всички снимки подредени по дата на качване в  низходящ ред със странициране, по 10 на страница
++     3. Преглед на снимка
++         а) меню за различните основни секции на  сайта (Начало|Снимки|Потребители|Контакти)
++         б) проста форма под снимката за добавяне на коментари (само за  регистрирани)
++         в) възможност за триене на снимката, ако я преглежда автора и
++     4. Потребители
++         а) меню за различните основни секции на  сайта (Начало|Снимки|Потребители|Контакти)
++         б) листване на всички потребители подредени по брой качени  снимки в низходящ ред със странициране, по 10 на страница
++     5. Контакти
++         а) меню за различните основни секции на  сайта (Начало|Снимки|Потребители|Контакти)
++         б) проста форма с полета: име, поща, съобщение, изпратеното  съобщение да се записва в базата и да се изпраща на системна поща
++      6. Логнати потребители - при логване на потребител трябва да има  възможност потребителя да се логаутне (logout, Изход от профил)  от  допълнително меню
++        а) меню качване на снимка
++         б) меню промяна на профил
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+ II. Администраторска част (логин форма за администратори):
+     1. Начало
++         а) меню за различните основни секции на  администрацията (Начало|Снимки|Потребители)
++         б) проста статистика за последните 5 потребителя регистрирани и  последни 5 снимки качени и от кой са качени.
++     2. Снимки
++         а) меню за различните основни секции на  администрацията (Начало|Снимки|Потребители)
++         б) преглед на качените снимки с допълнителен линк за коментарите към снимка, странициране по 10 снимки на страница, листнати  в низходящ ред по дата на качване, възможност за триене на снимка
++    3. Преглед на снимка (коментари към снимка)
++        а) меню за различните основни секции на  администрацията (Начало|Снимки|Потребители)
++        б) преглед на самата снимка и листване на коментарите към нея,  възможност за триене на коментар
+     4. Потребители
+         а) меню за различните основни секции на  администрацията (Начало|Снимки|Потребители)
++-       б) (без изтриване на потребител) листване на потребители в низходящ ред по дата на регистрация със странициране по 10 на страница с възможност за триене и  преглед на снимки качени от потребителя
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+ Бележки:
++     Максимум снимки, които може да качи потребител: 10
++     Максимум коментари към снимка: 10
++     Част функционалността не е описана и нарочно е пропусната, целта е  да се демонстрира креативност и индивидуализъм.
++     Задължително условие е задачата да бъде изпълнена в обектно ориентиран код. Използването на Laravel носи допълнителни точки.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Срок за задачата - 48 часа. :)
